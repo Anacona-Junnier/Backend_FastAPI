@@ -1,0 +1,49 @@
+Son métodos de HTML que nos permite comunicarnos a través de internet:
+POST: crear
+GET: obtener
+	PATH: obtener con un parámetro en especifico, si es necesario todos los parámetros para hacer la solicitud. Útil cuando los parámetros son obligatorios y definen un recurso específico. Menos flexible y no permite parámetros opcionales fácilmente.
+	QUERY: obtener con parámetros dinámicos, no es obligatorio todos los parámetros para hacer la solicitud. Más flexibles. No necesitas incluirlos siempre en la URL. Útil para parámetros opcionales.
+PUT: actualizar
+DELETE: eliminar
+
+
+JSON es un lenguaje estándar que nos permite enviar y recibir información
+
+Códigos de estado RFC9119 de HTTP :
+100-199 respuestas de información
+200-299 respuestas exitosas
+300-399 mensajes de redirección
+400-499 respuestas de error en el cliente
+500-599 respuestas de error en el servidor //SOLO LO PUEDE ENVIAR EL SERVIDOR
+
+	Códigos estándar:
+		100: para información
+		200: todo a ido bien
+		201: algo se ha creado
+		204: que no hay contenido para devolver al cliente
+		300: redirección
+		304: no modificado
+		400: error en el cliente
+		404: no ha encontrado nada
+		500: error interno 
+
+Importar la librería de HTTPException de fastapi. Nos permite manejar los estándares de código HTTP ej:
+	raise HTTPException(status_code=404, detail="El usuario ya existe")
+
+Autenticar: que la plataforma conozca quien se logeo (identificar)
+Autorizar: es tener acceso a cosas que los demás no podrían tener, es como tener una imagen privada de julian que los demás no puedan tener acceso así estén logeados
+
+OAuth2: es un estándar que nos dice como debemos de trabajar con las autenticaciones en un backend
+
+JWT: (JSON Web Tokens) es un estándar para codificar un JSON en un string tipo de autenticación pero más seguro.
+	instalación: pip install pyjwt
+			pip install "passlib[bcrypt]"
+
+
+"Hacer hashing" significa convertir algún contenido (una contraseña en este caso) en una secuencia de bytes (solo un string) que parece un galimatías(lenguaje complicado y sin sentido).
+
+Testing: es importante más que aprender un framework, como aprender los principios de la programación sirve como aprender a hacer testing al código, un ejemplo es la caja negra ó end to end, que a partir de una entrada esperamos una salida, si no sale lo que esperamos hay un bug. 
+	hacer test a una función es una prueba unitaria.
+	aprende un lenguaje de programación y testing sobre todo sus principios, luego frameworks eso puede esperar.
+Hacer el test primero te permite hacer el código más limpio y ser más productivo. 
+Para solucionar un requerimiento de software, primero identifica el problema, piensa como lo podrías solucionar, inicia creando la función de test y luego codifica la solución.
